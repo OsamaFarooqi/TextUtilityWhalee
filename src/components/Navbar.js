@@ -6,7 +6,7 @@ export default function Navbar({
   aboutText = "About",
 }) {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-primary navbar-dark bg-dark">
       <div className="container-fluid">
         <a className="navbar-brand" href="/">
           {title}
@@ -42,7 +42,7 @@ export default function Navbar({
               placeholder="Search"
               aria-label="Search"
             />
-            <button className="btn btn-outline-success" type="submit">
+            <button className="btn btn-primary" type="submit">
               Search
             </button>
           </form>
@@ -51,12 +51,3 @@ export default function Navbar({
     </nav>
   );
 }
-Navbar.propTypes = {
-  title: PropTypes.string.isRequired,
-  aboutText: PropTypes.string,
-};
-
-// Navbar.defaultProps = {
-//   title: "Set title here",
-//   aboutText: "About",
-// };
