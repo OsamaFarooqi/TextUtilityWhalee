@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export default function TextForm({ heading = "Enter heading here" }) {
-  const [text, setText] = useState("Type text here 2");
+  const [text, setText] = useState("");
 
   const handleUpCLick = () => {
     const newText = text.toUpperCase();
@@ -10,11 +10,15 @@ export default function TextForm({ heading = "Enter heading here" }) {
 
   const handleLoCLick = () => {
     const newText = text.toLowerCase();
-    setText(text.toLowerCase());
+    setText(newText);
+  };
+
+  const handleClearCLick = () => {
+    const newText = "";
+    setText(newText);
   };
 
   const handleOnChange = (event) => {
-    // console.log("On change clicked");
     setText(event.target.value);
   };
 
@@ -37,6 +41,9 @@ export default function TextForm({ heading = "Enter heading here" }) {
         </button>
         <button className="btn btn-primary mx-2" onClick={handleLoCLick}>
           Convert to Lowercase
+        </button>
+        <button className="btn btn-primary mx-2" onClick={handleClearCLick}>
+          Clear Text
         </button>
       </div>
       <div className="container">
