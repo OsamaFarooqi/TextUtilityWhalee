@@ -6,6 +6,9 @@ export default function Navbar({
   aboutText = "About",
   mode = "light",
   handleToggleMode,
+  handleDarkMode,
+  setDarkModeColor,
+  darkModeColor,
 }) {
   return (
     <nav
@@ -50,7 +53,7 @@ export default function Navbar({
               Search
             </button>
           </form> */}
-          <div className="form-check form-switch">
+          {/* <div className="form-check form-switch">
             <input
               className="form-check-input"
               type="checkbox"
@@ -65,6 +68,60 @@ export default function Navbar({
               htmlFor="switchCheckDefault"
             >
               Enable DarkMode
+            </label>{" "}
+          </div> */}
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="radioDefault"
+              id="light"
+              checked={setDarkModeColor === "#ffffffff"}
+              onChange={() => handleDarkMode("light", "#ffffffff")}
+            />
+            <label
+              className={`form-check-label text-${
+                mode === "light" ? "dark" : "light"
+              }`}
+              htmlFor="radioDefault1"
+            >
+              White
+            </label>
+          </div>
+          <div className="form-check mx-3">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="radioDefault"
+              id="green"
+              checked={darkModeColor === "#01341cff"}
+              onChange={() => handleDarkMode("dark", "#01341cff")}
+            />
+            <label
+              className={`form-check-label text-${
+                mode === "light" ? "dark" : "light"
+              }`}
+              htmlFor="radioDefault2"
+            >
+              Green
+            </label>
+          </div>
+          <div className="form-check">
+            <input
+              className="form-check-input"
+              type="radio"
+              name="radioDefault"
+              id="yellow"
+              checked={setDarkModeColor === "#5d4600ff"}
+              onChange={() => handleDarkMode("dark", "#5d4600ff")}
+            />
+            <label
+              className={`form-check-label text-${
+                mode === "light" ? "dark" : "light"
+              }`}
+              htmlFor="radioDefault1"
+            >
+              Yellow
             </label>
           </div>
         </div>

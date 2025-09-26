@@ -3,22 +3,26 @@ import React, { useState } from "react";
 export default function TextForm({
   heading = "Enter heading here",
   mode = "light",
+  showAlert,
 }) {
   const [text, setText] = useState("");
 
   const handleUpCLick = () => {
     const newText = text.toUpperCase();
     setText(newText);
+    showAlert("Converted to Uppercase!", "success");
   };
 
   const handleLoCLick = () => {
     const newText = text.toLowerCase();
     setText(newText);
+    showAlert("Converted to Lowercase!", "success");
   };
 
   const handleClearCLick = () => {
     const newText = "";
     setText(newText);
+    showAlert("Text Cleared!", "success");
   };
 
   const handleOnChange = (event) => {
