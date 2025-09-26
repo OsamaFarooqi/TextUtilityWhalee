@@ -6,6 +6,7 @@ export default function TextForm({
   showAlert,
 }) {
   const [text, setText] = useState("");
+  const [totalWords, setTotalWords] = useState(0);
 
   const handleUpCLick = () => {
     const newText = text.toUpperCase();
@@ -27,6 +28,18 @@ export default function TextForm({
 
   const handleOnChange = (event) => {
     setText(event.target.value);
+    handleWordCount(event.target.value);
+  };
+
+  const handleWordCount = (newText) => {
+    console.log("text:" + newText + ";");
+    let trimedText = newText.trim();
+    console.log("trimedText:" + trimedText + ";");
+    if (trimedText.length === 0) {
+      setTotalWords(0);
+    } else {
+      setTotalWords(trimedText.split(/\s+/).length);
+    }
   };
 
   return (
@@ -60,7 +73,7 @@ export default function TextForm({
       <div className={`container text-${mode === "light" ? "dark" : "light"}`}>
         <h2>Your text summary</h2>
         <p>
-          {text.split(" ").length} words and {text.length} characters
+          {totalWords} words and {text.length} characters
         </p>
         <p>{0.0008 * text.split(" ").length} minutes to read</p>
         <h2>Preview text</h2>
