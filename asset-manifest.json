@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/TextUtilityWhalee/static/css/main.31d6cfe0.css",
-    "main.js": "/TextUtilityWhalee/static/js/main.a741ef58.js",
+    "main.js": "/TextUtilityWhalee/static/js/main.2854440d.js",
     "static/js/453.96453769.chunk.js": "/TextUtilityWhalee/static/js/453.96453769.chunk.js",
     "index.html": "/TextUtilityWhalee/index.html",
-    "main.a741ef58.js.map": "/TextUtilityWhalee/static/js/main.a741ef58.js.map",
+    "main.2854440d.js.map": "/TextUtilityWhalee/static/js/main.2854440d.js.map",
     "453.96453769.chunk.js.map": "/TextUtilityWhalee/static/js/453.96453769.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.31d6cfe0.css",
-    "static/js/main.a741ef58.js"
+    "static/js/main.2854440d.js"
   ]
 }
