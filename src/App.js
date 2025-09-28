@@ -54,7 +54,7 @@ function App() {
   return (
     <>
       <Navbar
-        title="TextUtils"
+        title="TextUtilityWhalee"
         aboutText="About Us"
         mode={mode}
         handleToggleMode={handleToggleMode}

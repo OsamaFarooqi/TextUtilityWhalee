@@ -76,11 +76,20 @@ export default function TextForm({
       <div className={`container text-${mode === "light" ? "dark" : "light"}`}>
         <h2>Your text summary</h2>
         <p>
-          {totalWords} words and {text.length} characters
+          {totalWords} Words and {text.length} Characters.{" | "}
+          {(0.0008 * text.split(" ").length).toFixed(2)} Minutes to Read.
         </p>
-        <p>{(0.0008 * text.split(" ").length).toFixed(2)} minutes to read</p>
         <h2>Preview text</h2>
-        <p>{text.length > 0 ? text : "Please enter text above to preview"}</p>
+        <p
+          className="p-3 mb-5"
+          style={{
+            backgroundColor: "#f2f2f2",
+            borderRadius: 5,
+            minHeight: "100px",
+          }}
+        >
+          {text.length > 0 ? text : "Please enter text above to preview"}
+        </p>
       </div>
     </>
   );
