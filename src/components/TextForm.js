@@ -47,6 +47,18 @@ export default function TextForm({
       <div className={`container text-${mode === "light" ? "dark" : "light"}`}>
         <h2>{heading}</h2>
         <div className="mb-3">
+          <div className="mb-3">
+            <button className="btn btn-primary" onClick={handleUpCLick}>
+              Convert to Uppercase
+            </button>
+            <button className="btn btn-primary mx-2" onClick={handleLoCLick}>
+              Convert to Lowercase
+            </button>
+            <button className="btn btn-primary " onClick={handleClearCLick}>
+              Clear Text
+            </button>
+          </div>
+
           <textarea
             className="form-control"
             id="myBox"
@@ -60,22 +72,13 @@ export default function TextForm({
             placeholder="Enter text here"
           />
         </div>
-        <button className="btn btn-primary mx-2" onClick={handleUpCLick}>
-          Convert to Uppercase
-        </button>
-        <button className="btn btn-primary mx-2" onClick={handleLoCLick}>
-          Convert to Lowercase
-        </button>
-        <button className="btn btn-primary mx-2" onClick={handleClearCLick}>
-          Clear Text
-        </button>
       </div>
       <div className={`container text-${mode === "light" ? "dark" : "light"}`}>
         <h2>Your text summary</h2>
         <p>
           {totalWords} words and {text.length} characters
         </p>
-        <p>{0.0008 * text.split(" ").length} minutes to read</p>
+        <p>{(0.0008 * text.split(" ").length).toFixed(2)} minutes to read</p>
         <h2>Preview text</h2>
         <p>{text.length > 0 ? text : "Please enter text above to preview"}</p>
       </div>
